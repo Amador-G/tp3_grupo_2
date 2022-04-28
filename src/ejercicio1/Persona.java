@@ -97,11 +97,21 @@ public class Persona implements Comparable<Persona>{
 				String [] cortarString = linea.split("-");
 				Persona p = new Persona();
 				
-				if(cortarString.length == 3 ) {			
-						p.setNombre(cortarString[0]);
-						p.setApellido(cortarString[1]);
-						p.setDni(cortarString[2]);
-						Lista.add(p);							
+				if(cortarString.length == 3 ) {		
+						try {
+							if(p.VerificarDniInvalido(cortarString[2])==true)
+							{
+								p.setNombre(cortarString[0]);
+								p.setApellido(cortarString[1]);
+								p.setDni(cortarString[2]);
+								Lista.add(p);	
+							}
+						} catch (Exception e) {
+							
+							e.printStackTrace();
+						}
+				
+												
 				}
 				linea =br.readLine();
 			}		
