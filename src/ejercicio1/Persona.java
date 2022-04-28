@@ -121,7 +121,7 @@ public class Persona implements Comparable<Persona>{
 			
 		}catch(IOException e)
 		{
-			System.out.println("edu me enseño mal");
+			System.out.println("Excepción encontrada");
 		}
 		return Lista;		
 	}
